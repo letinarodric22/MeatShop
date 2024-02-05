@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+
+<style>
+    .error1 {
+        color: red;
+    }
+
+    .container {
+        background-image: url(static/images/image1.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: blur(10px);
+    }
+
+    .card {
+        background-color: red;
+        /* Adjust the background color and opacity as needed */
+        width: 100%;
+    }
+</style>
+
+
+{% block content %}
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Register</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/adduser" method="POST">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" required class="form-control" id="name"
+                                    placeholder="Enter your full name " name="fullname">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" required class="form-control" id="email" placeholder="Enter email"
+                                    name="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="user_type" class="form-label">user_type</label>
+                                <input type="text" required class="form-control" id="user_type" placeholder="user_type"
+                                    name="user_type">
+                            </div>
+                            <div class="mb-3">
+                                <label for="user_status" class="form-label">user_status</label>
+                                <input type="number" required class="form-control" id="user_status"
+                                    placeholder="user_status" name="user_status" min="0" max="4" step="1">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">password</label>
+                                <input type="password" required class="form-control" id="password"
+                                    placeholder="Enter password" name="password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dob" class="form-label">date of birth</label>
+                                <input type="date" required class="form-control" id="dob"
+                                    placeholder="Enter date of birth" name="dob">
+                            </div>
+                            <button type="submit" class="btn btn-primary">submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+{% endblock %}

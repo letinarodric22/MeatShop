@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}layout{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            padding-top: 70px;
+            margin-bottom: 0px;
+        }
+
+        nav {
+            background-color: green;
+            position: fixed;
+            font-weight: bolder;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        ul li {
+            padding-inline-end: 80px;
+        }
+
+        ul li:hover {
+            color: red;
+        }
+
+
+
+
+        .custom-footer {
+            background-color: black;
+            color: white;
+            padding: 20px 20px 20px 20px;
+        }
+
+        .custom-footer h4 {
+            color: white;
+            padding: 30px;
+        }
+
+        .navbar-brand {
+            color: red;
+            letter-spacing: 6px;
+            font-size: 25px;
+            font-family: sans-serif;
+            font-weight: bolder;
+            margin-top: 0%;
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <!-- Logo -->
+        <h2 class="navbar-brand">MeatShop</h2>
+
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<body>
+
+    {% block content %}{% endblock %}
+
+</body>
+<footer class="custom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h2 class="logo">MeatShop</h2>
+                <br>
+                <h4>About Us</h4>
+                <p>Transform your meals into gourmet experiences with our premium meats. Elevate your everyday cooking
+                    to extraordinary, creating memorable moments with family and friends around the dining table.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <h4>Contact Us</h4>
+                <p>Ndagani, Chuka-University, TharakaNithi-Kenya</p>
+                <p>Phone: +254 712345678</p>
+                <p>If you have any questions or feedback, please <a href="mailto:sandaiya50rodric@gmail.com">email
+                        us</a>.</p>
+            </div>
+            <div class="col-md-3">
+                <h4>Opening Hours</h4>
+                <p><strong>Monday-Friday:</strong> 8am-7pm</p>
+                <p><strong>Saturday:</strong> 9am-5pm</p>
+                <p><strong>Sunday:</strong> Closed</p>
+            </div>
+
+            <div id="map" class="col-md-3">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15936.67213049145!2d35.75107768094218!3d-1.061879993083888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182a3d63c03a1327%3A0x96777fbd06842b19!2sOlolulunga%2C%20Narok%2C%20Kenya!5e0!3m2!1sen!2s!4v1637265296793!5m2!1sen!2s&ll=-1.0063016647611112,35.65153262119499"
+                    width="100%" height="422px" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+
+
+</html>

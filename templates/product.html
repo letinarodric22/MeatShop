@@ -1,0 +1,80 @@
+<style>
+    body {
+        padding-top: 70px;
+        margin: 0;
+
+    }
+
+    #container {
+        position: relative;
+        width: 100%;
+        text-align: left;
+    }
+
+    #image {
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+    }
+
+    #text {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(0, -50%);
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .card-container {
+        margin: 50px 30px 30px 30px;
+
+    }
+
+    .card-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card {
+        border-radius: 300px;
+    }
+</style>
+
+
+
+<body>
+    <div id="container">
+        <img id="image" src="static/images/meat.jpg">
+        <p id="text">
+            courses
+        </p>
+    </div>
+    {% extends "layout.html" %}
+    {% block content %}
+    <!-- Image with text on the left -->
+
+
+    <!-- Cards -->
+    <div class="container">
+        <div class="row mt-4 card-container">
+            {% for c in course %}
+            <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                <div class="card h-100">
+                    <img class="card-img" src="static/images/meat.jpg" alt="Course image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ c[1] }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ c[2] }}</h6>
+                        <p class="card-text">{{ c[3] }}</p>
+                        <a href="/register" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</body>
+{% endblock %}

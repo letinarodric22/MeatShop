@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student_table</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            color: green;
+        }
+
+        .table {
+            height: 20cm;
+            font-family: sans-serif;
+            border: none;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+
+{% extends "layout.html" %}
+{% block content %}
+
+<body>
+    <div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+
+                <table class="table" id="myTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>fullname</th>
+                            <th>email</th>
+                            <th>type</th>
+                            <th>status</th>
+                            <th>time_created</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in user %}
+                        <tr>
+                            <td>{{ p[0] }}</td>
+                            <td>{{ p[1] }}</td>
+                            <td>{{ p[2] }}</td>
+                            <td>{{ p[3] }}</td>
+                            <td>{{ p[4] }}</td>
+                            <td>{{ p[6] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                // configuration options...
+            });
+        });
+    </script>
+    {% endblock %}
+
+</body>
+
+</html>
