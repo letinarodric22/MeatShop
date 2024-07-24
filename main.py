@@ -1,5 +1,5 @@
 from flask import Flask, render_template, redirect, request
-from database import fetch_data, insert_user
+from database import *
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ def hello():
 
 @app.route("/students")
 def students():
-   user = fetch_data("users")
+   user = users("users")
    return render_template("students.html", user = user)
 
 
