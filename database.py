@@ -1,7 +1,8 @@
-# models.py
-from sqlalchemy import create_engine, Column, Integer, String
+# database.py
+from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from datetime import datetime
 
 # Database credentials
 username = 'postgres'
@@ -20,10 +21,14 @@ class MeatProduct(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String, nullable=False)
     price = Column(Integer, nullable=False)
+    buying_price = Column(Integer, nullable=False)
+    selling_price = Column(Integer, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 
 # Initialize the session
 Session = sessionmaker(bind=engine)
 session = Session()
 
-def init_db():
+def drop_and_recreate():
+    Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)

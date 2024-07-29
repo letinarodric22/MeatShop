@@ -4,12 +4,26 @@
     <title>Add Product</title>
 </head>
 <body>
-    <h1>Add New Product</h1>
+    <h1>Add a New Product</h1>
     <form method="POST">
         {{ form.hidden_tag() }}
-        {{ form.name.label }} {{ form.name() }}<br>
-        {{ form.price.label }} {{ form.price() }}<br>
-        {{ form.submit() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}
+        </p>
+        <p>
+            {{ form.price.label }}<br>
+            {{ form.price() }}
+        </p>
+        <p>
+            {{ form.buying_price.label }}<br>
+            {{ form.buying_price() }}
+        </p>
+        <p>
+            {{ form.selling_price.label }}<br>
+            {{ form.selling_price() }}
+        </p>
+        <p><button type="submit">Add Product</button></p>
     </form>
 </body>
 </html>

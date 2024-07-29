@@ -10,6 +10,9 @@
             <tr>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Buying Price</th>
+                <th>Selling Price</th>
+                <th>Created At</th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +20,9 @@
             <tr>
                 <td>{{ product.name }}</td>
                 <td>{{ product.price }}</td>
+                <td>{{ product.buying_price }}</td>
+                <td>{{ product.selling_price }}</td>
+                <td>{{ product.created_at }}</td>
             </tr>
             {% endfor %}
         </tbody>
